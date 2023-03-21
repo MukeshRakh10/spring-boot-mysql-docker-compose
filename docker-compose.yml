@@ -3,24 +3,19 @@ version: "3"
 services:
   application:
     image: springboot-app
-    ports:
-      - "1010:1010"
     networks:
       - springboot-db-net
+    ports:
+      - "1010:1010"
     depends_on:
       - mysqldb
-#    volumes:
- #     - /data/springboot-app
-    
   mysqldb:
     image: mysql:5.7
     networks:
       - springboot-db-net
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=sbms
-  #  volumes:
-   #   - /data/mysql
+      - MYSQL_ROOT_PASSWORD: root
+      - MYSQL_DATABASE: sbms
 networks:
-  springboot-db-net:
+	springboot-db-net:
 ...
