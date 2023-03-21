@@ -3,7 +3,7 @@ services:
   application:
     image: springboot-app
     ports:
-      - "8080:8080"
+      - "1010:1010"
     networks:
       - springboot-db-net
     depends_on:
